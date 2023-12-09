@@ -92,3 +92,5 @@ ssh_agent_init
 
 starship init fish | source
 
+set -x -g JAVA_HOME /usr/lib/jvm/jdk-21.0.1/
+set -x -g GRADLE_USER_HOME ~/.gradle/

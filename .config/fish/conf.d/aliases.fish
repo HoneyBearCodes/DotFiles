@@ -54,13 +54,6 @@ function copy
     end
 end
 
-function fish_display_paths
-  echo $fish_user_paths | tr " " "\n" | nl
-end
-
-function fish_remove_path
-  set --erase --universal fish_user_paths[$argv]
-end
 
 
 
@@ -75,6 +68,7 @@ alias sv='sudo lvim'
 alias config='/usr/bin/git --git-dir=$HOME/Documents/Repos/DotFiles --work-tree=$HOME'
 alias edge=microsoft-edge-stable
 alias add-ssh='~/Documents/Repos/Projects/Scripts/add_ssh.py'
+alias st='speedtest --progress=yes'
 # alias bt-start='sudo systemctl start bluetooth.service'
 # alias bt-stop='sudo systemctl stop bluetooth.service'
 # alias bt-restart='sudo systemctl restart bluetooth.service'
@@ -107,3 +101,27 @@ end
 function bt
   sudo systemctl $argv bluetooth.service
 end
+
+# for displaying added paths
+function fish_display_paths
+  echo $fish_user_paths | tr " " "\n" | nl
+end
+
+# for removing added paths
+function fish_remove_path
+  set --erase --universal fish_user_paths[$argv]
+end
+
+# for initializing a flutter project with gradle-8.5
+function create_flutter_project
+    if test (count $argv) -ne 1
+        echo "Usage: create_flutter_project <project_name>"
+        return 1
+    end
+    set project_name $argv[1]
+    flutter create $project_name
+    cd $project_name/android/
+    sed -i 's#distributionUrl=.*#distributionUrl=file:///opt/gradle-8.5/wrappers/dists/gradle-8.5-all.zip#' gradle/wrapper/gradle-wrapper.properties
+    ./gradlew wrapper
+end
+

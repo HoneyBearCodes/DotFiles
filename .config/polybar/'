@@ -120,11 +120,15 @@ label-unmounted-foreground = ${colors.disabled}
 type = internal/pulseaudio
 click-right = pavucontrol
 
-format-volume = <ramp-volume> <label-volume>
+;;format-volume-prefix = "VOL "
+;format-volume-foreground = ${colors.primary} 
+;; format-volume = <label-volume>
+;format-volume = <ramp-volume> <label-volume>
+;format-muted = <label-muted> <label-volume>
 
 label-volume = %{T4}%percentage%%%{T-}
 label-volume-foreground = ${colors.foreground}
-label-muted =  %{T4}%percentage%%%{T-}
+label-muted = 
 label-muted-foreground = ${colors.disabled}
 
 ramp-volume-0 = 
@@ -135,6 +139,8 @@ ramp-volume-4 = 
 ramp-volume-5 = 
 
 format-volume-foreground = ${colors.primary} 
+format-volume = <ramp-volume> <label-volume>
+format-muted-prefix = "  "
 format-muted-prefix-foreground = "#ff0000"
 format-muted-foreground = ${colors.foreground}
 format-muted-background = ${colors.background}
