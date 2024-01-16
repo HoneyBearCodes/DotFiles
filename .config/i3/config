@@ -277,8 +277,8 @@ set $ws10 "10"
 # where you have to replace VGA-0/HDMI-0 with the names for your displays
 # you can get from xrandr command
 workspace $ws1 output HDMI-1
-workspace $ws5 output HDMI-1
 workspace $ws3 output eDP-1
+workspace $ws5 output HDMI-1
 
 # bind program to workspace and focus to them on startup:
 assign [instance="kitty"] $ws1
@@ -308,6 +308,9 @@ for_window [class=code-oss] focus
 for_window [class=Emacs] focus
 for_window [class=qBittorrent] focus
 for_window [class=Blueman-manager] floating enable
+
+# Android emulator
+for_window [title=".*Emulator.*"] floating enable
 
 
 #############################################
