@@ -1,0 +1,30 @@
+[Default Applications]
+text/html=brave-browser.desktop
+x-scheme-handler/http=brave-browser.desktop
+x-scheme-handler/https=brave-browser.desktop
+x-scheme-handler/about=brave-browser.desktop
+x-scheme-handler/unknown=brave-browser.desktop
+inode/directory=thunar.desktop
+x-scheme-handler/mailto=brave-browser.desktop
+image/*=qiv.desktop
+image/png=qiv.desktop
+image/jpg=qiv.desktop
+image/jpeg=org.gnome.Shotwell-Viewer.desktop
+image/webp=org.gnome.Shotwell-Viewer.desktop
+image/avif=org.gnome.Shotwell-Viewer.desktop
+x-scheme-handler/obsidian=obsidian.desktop
+application/octet-stream=sublime_text.desktop
+application/x-zerosize=vlc.desktop
+
+[Added Associations]
+image/webp=qiv.desktop;org.gnome.Shotwell-Viewer.desktop;
+image/avif=qiv.desktop;deepin-image-viewer.desktop;org.gnome.Shotwell-Viewer.desktop;
+image/jpeg=microsoft-edge.desktop;org.gnome.Shotwell-Viewer.desktop;
+video/x-matroska=io.github.celluloid_player.Celluloid.desktop;mpv.desktop;vlc.desktop;
+video/mp4=mpv.desktop;
+text/plain=sublime_text.desktop;obsidian.desktop;org.gnome.gedit.desktop;
+application/octet-stream=sublime_text.desktop;
+application/x-zerosize=sublime_text.desktop;code.desktop;vlc.desktop;
+application/vnd.adobe.flash.movie=vlc.desktop;
+application/pdf=brave-browser.desktop;microsoft-edge.desktop;
+image/png=org.gnome.Shotwell-Viewer.desktop;
