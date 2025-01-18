@@ -68,6 +68,11 @@ linters.setup {
 -- Plugins Configurations
 ---------------------------
 
+
+lvim.plugins = {
+  "mfussenegger/nvim-jdtls",
+}
+
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
@@ -85,6 +90,7 @@ lvim.builtin.alpha.dashboard.section.header.val = {
 }
 lvim.builtin.alpha.dashboard.section.footer.val = "© Shashank Singh 2025"
 lvim.builtin.treesitter.ignore_install = { "haskell" }
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "jdtls" })
 
 ---------------------------
 -- Import Lualine Config
