@@ -38,6 +38,7 @@ This repository showcases my meticulously crafted **Arch Linux configuration**, 
 - **Notifications**: Dunst with Tokyonight theme 🔕  
 - **Lockscreen**: i3lock with JetBrainsMono Nerd Font 🔒  
 - **File Previewer**: Eza, which is a modern replacement for `ls`
+- **Ebook Reader**: Calibre
 
 
 ## 🌟 Default Applications  
@@ -54,6 +55,7 @@ This repository showcases my meticulously crafted **Arch Linux configuration**, 
 | **Media Player (Terminal)**| MPV                               |  
 | **Media Player (GUI)**     | Celluloid                         |  
 | **Wallpaper Manager**      | Nitrogen                          |  
+| **Ebook Reader**           | Calibre                           |  
 
 
 ## 📸 Screenshots  
