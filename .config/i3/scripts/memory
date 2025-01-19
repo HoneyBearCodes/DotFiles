@@ -29,12 +29,8 @@ END {
     used = total - free
     pct = total > 0 ? (used / total) * 100 : 0
 
-    # Output percentage
+    # Output only percentage
     printf "%.0f%%\n", pct
-
-    # Output color based on usage
-    if (pct > 90) print "#FF0000"
-    else if (pct > 80) print "#FFAE00"
-    else if (pct > 70) print "#FFF600"
 }
 ' /proc/meminfo
+
