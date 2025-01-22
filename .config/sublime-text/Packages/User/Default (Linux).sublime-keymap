@@ -1,0 +1,30 @@
+[
+  {
+    "keys": ["ctrl+j"],
+    "command": "join_lines"
+  },
+  {
+    "keys": ["ctrl+r"],
+    "command": "find_next"
+  },
+  {
+    "keys": ["ctrl+d"],
+    "command": "duplicate_line"
+  },
+  {
+    "keys": ["ctrl+alt+n"],
+    "command": "new_file"
+  },
+  {
+    "keys": ["ctrl+n"],
+    "command": "new_file"
+  },
+  {
+    "keys": ["ctrl+meta+n"],
+    "command": "new_window"
+  },
+  {
+    "keys": ["ctrl+shift+n"],
+    "command": "new_folder"
+  },
+]
