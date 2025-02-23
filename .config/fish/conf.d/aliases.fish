@@ -4,8 +4,8 @@
 # Aliases for the Fish shell
 #============================
 
-alias v=lvim
-alias sv='sudo ~/.local/bin/lvim'
+alias v=nvim
+alias sv='sudo nvim'
 alias config='/usr/bin/git --git-dir=$HOME/Workspace/Repos/DotFiles --work-tree=$HOME'
 alias edge=microsoft-edge-stable
 alias add-ssh='~/Workspace/Repos/Projects/Scripts/add_ssh.py'
