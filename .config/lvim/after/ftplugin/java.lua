@@ -74,7 +74,9 @@ local config = {
     if lvim.builtin.dap.active then
       require("jdtls.dap").setup_dap_main_class_configs()
       require("jdtls").setup_dap { hotcodereplace = "auto" }
-      require("lvim.lsp").on_attach(client, bufnr)
+      if require("lvim.lsp").on_attach then
+        require("lvim.lsp").on_attach(client, bufnr)
+      end
     end
   end,
   on_init = require("lvim.lsp").common_on_init,
