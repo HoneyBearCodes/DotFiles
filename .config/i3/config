@@ -50,6 +50,7 @@ set $ws10 "10"
 
 # Bind workspaces to specific outputs
 workspace $ws1 output HDMI-1
+workspace $ws2 output HDMI-1
 workspace $ws3 output HDMI-1
 workspace $ws5 output eDP-1
 
