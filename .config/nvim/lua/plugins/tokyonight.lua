@@ -1,3 +1,5 @@
+-- Configs to enable Tokyonight theme
+
 return {
   {
     "folke/tokyonight.nvim",

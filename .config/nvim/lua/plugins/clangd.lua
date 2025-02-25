@@ -1,3 +1,5 @@
+-- Clangd's off-spec features for neovim's LSP client (C/CPP)
+
 return {
   "p00f/clangd_extensions.nvim",
   lazy = true,

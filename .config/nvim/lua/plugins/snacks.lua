@@ -1,3 +1,5 @@
+-- Configs for Nvim's Dashboard
+
 return {
 
   "snacks.nvim",

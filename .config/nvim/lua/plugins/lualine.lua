@@ -1,3 +1,6 @@
+-- @author: Shashank Singh
+-- @desc: Tokyonight Theme for Lualine
+
 return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
