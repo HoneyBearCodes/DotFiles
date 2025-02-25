@@ -146,6 +146,26 @@ return {
         -- Java (nvim-java)
 
         jdtls = function(_, opts)
+          -- Silent noise from jdtls (https://github.com/orgs/nvim-java/discussions/89)
+          opts.handlers = {
+            ["language/status"] = function(_, result) end,
+            ["$/progress"] = function(_, result, ctx) end,
+          }
+
+          opts.settings = vim.tbl_deep_extend("force", opts.settings or {}, {
+            java = {
+              configuration = {
+                runtimes = {
+                  {
+                    name = "JavaSE-21",
+                    path = "/usr/lib/jvm/java-21-openjdk",
+                    default = true,
+                  },
+                },
+              },
+            },
+          })
+
           -- Ensure jdtls is properly set up using nvim-java
           require("lspconfig").jdtls.setup(opts)
           return true
