@@ -1,3 +1,8 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
+--  ╭──────────────────────────────────────────────────────────────────────╮
+--  │                   Keybindings for Neovim                             │
+--  │        (automatically loaded on VeryLazy event)                      │
+--  ╰──────────────────────────────────────────────────────────────────────╯
+
+-- Map 'jk' to <Esc>
+vim.keymap.set("i", "jk", "<Esc>")
+vim.keymap.set("t", "jk", [[<C-\><C-n>]])

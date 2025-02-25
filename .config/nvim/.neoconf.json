@@ -1,13 +1,21 @@
 {
+  // NeoConf Configuration File
+  // This file configures Neodev and other plugins to enhance Lua development
+  // in Neovim by providing better autocompletion, type checking, and LSP support.
+
   "neodev": {
     "library": {
+      // Enables Neodev, which improves Lua development in Neovim
       "enabled": true,
+
+      // Allows Neodev to automatically detect and configure plugins
       "plugins": true
     }
   },
   "neoconf": {
     "plugins": {
       "lua_ls": {
+        // Enables support for Lua Language Server (lua_ls) in Neovim
         "enabled": true
       }
     }

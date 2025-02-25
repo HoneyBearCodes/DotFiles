@@ -1,3 +1,15 @@
--- Options are automatically loaded before lazy.nvim startup
--- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
--- Add any additional options here
+--  ╭────────────────────────────────────────────────────────────────────────────╮
+--  │                Neovim Global Options Configuration                         │
+--  │        (automatically loaded before lazy.nvim startup)                     │
+--  ╰────────────────────────────────────────────────────────────────────────────╯
+
+-- Enable spell check by default unless in vscode
+if not vim.g.vscode then
+  vim.o.spell = true
+end
+
+-- Set conceal level to 0
+-- vim.o.conceallevel = 0
+
+vim.opt.grepprg = "rg --vimgrep --smart-case --"
+vim.opt.listchars = "trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂"

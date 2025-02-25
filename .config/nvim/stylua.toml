@@ -1,3 +1,13 @@
+#   ╭──────────────────────────────────────────────────────────────────────────────────╮
+#   │                        Stylua Configuration File                                 │
+#   │     (defines formatting rules for Lua scripts across nvim configs & plugins)     │
+#   ╰──────────────────────────────────────────────────────────────────────────────────╯
+
+# Specifies whether to use spaces or tabs for indentation
 indent_type = "Spaces"
+
+# Defines the number of spaces per indentation level
 indent_width = 2
+
+# Sets the maximum line width before wrapping code
 column_width = 120

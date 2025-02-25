@@ -1,2 +1,6 @@
--- bootstrap lazy.nvim, LazyVim and your plugins
+--  ╭──────────────────────────────────────────────────────────────────────────────╮
+--  │                        Neovim Initialization File                            │
+--  │       (bootstraps LazyVim, lazy.nvim, and user-defined plugins)              │
+--  ╰──────────────────────────────────────────────────────────────────────────────╯
+
 require("config.lazy")
