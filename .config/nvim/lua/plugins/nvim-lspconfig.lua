@@ -7,7 +7,13 @@ return {
     "mason.nvim",
     { "williamboman/mason-lspconfig.nvim", config = function() end },
   },
-  opts = function()
+  opts = function(_, opts)
+    local servers = { "basedpyright", "ruff" }
+    for _, server in ipairs(servers) do
+      opts.servers[server] = opts.servers[server] or {}
+      opts.servers[server].enabled = server == "basedpyright" or server == "ruff"
+    end
+
     ---@class PluginLspOpts
     local ret = {
       -- options for vim.diagnostic.config()
@@ -58,6 +64,23 @@ return {
       -- LSP Server Settings
       ---@type lspconfig.options
       servers = {
+
+        -- Python
+        ruff = {
+          cmd_env = { RUFF_TRACE = "messages" }, -- Enable Ruff logging
+          init_options = {
+            settings = {
+              logLevel = "error",
+            },
+          },
+          keys = {
+            {
+              "<leader>co",
+              LazyVim.lsp.action["source.organizeImports"],
+              desc = "Organize Imports",
+            },
+          },
+        },
 
         -- Java (nvim-java)
 
@@ -142,6 +165,35 @@ return {
       -- return true if you don't want this server to be setup with lspconfig
       ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
       setup = {
+
+        -- Python
+        -- basedpyright = function()
+        --   LazyVim.lsp.on_attach(function(client, _)
+        --     client.server_capabilities.hoverProvider = true
+        --   end)
+        -- end,
+        --
+        -- ["ruff"] = function()
+        --   LazyVim.lsp.on_attach(function(client, _)
+        --     client.server_capabilities.hoverProvider = false
+        --   end)
+        -- end,
+
+        basedpyright = function(_, opts)
+          opts.on_attach = function(client, _)
+            client.server_capabilities.hoverProvider = true
+          end
+          require("lspconfig").basedpyright.setup(opts)
+          return true
+        end,
+
+        ruff = function(_, opts)
+          opts.on_attach = function(client, _)
+            client.server_capabilities.hoverProvider = false
+          end
+          require("lspconfig").ruff.setup(opts)
+          return true
+        end,
 
         -- Java (nvim-java)
 
@@ -242,6 +294,20 @@ return {
             end
           end
         end
+    end
+
+    -- Override hover handler to ignore `ruff`
+    vim.lsp.handlers["textDocument/hover"] = function(_, result, ctx, config)
+      local client = vim.lsp.get_client_by_id(ctx.client_id)
+      if client.name == "ruff" then
+        return -- Ignore hover results from Ruff
+      end
+      if not (result and result.contents) then
+        return
+      end
+      return vim.lsp.util.focusable_float(0, "hover", function()
+        return vim.lsp.util.open_floating_preview(result.contents, "markdown", config)
+      end)
     end
 
     vim.diagnostic.config(vim.deepcopy(opts.diagnostics))

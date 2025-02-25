@@ -7,6 +7,9 @@ return {
       "c",
       "cpp",
       "java",
+      -- Python
+      "ninja",
+      "rst",
     },
   },
 }
