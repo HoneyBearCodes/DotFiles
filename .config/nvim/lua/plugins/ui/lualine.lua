@@ -1,3 +1,8 @@
+--  ╭──────────────────────────────────────────────╮
+--  │            Lualine Configurations            │
+--  │          (custom Tokyonight theme)           │
+--  ╰──────────────────────────────────────────────╯
+
 return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",

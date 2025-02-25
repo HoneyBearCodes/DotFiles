@@ -1,3 +1,7 @@
+--  ╭──────────────────────────────────────────────╮
+--  │             CLangd Configurations            │
+--  ╰──────────────────────────────────────────────╯
+
 return {
   recommended = function()
     return LazyVim.extras.wants({
