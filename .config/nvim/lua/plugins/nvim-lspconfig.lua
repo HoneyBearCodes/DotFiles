@@ -59,6 +59,13 @@ return {
       ---@type lspconfig.options
       servers = {
 
+        -- Java (nvim-java)
+
+        jdtls = {
+          enabled = true,
+          mason = false,
+        },
+
         -- C/CPP
 
         clangd = {
@@ -136,7 +143,16 @@ return {
       ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
       setup = {
 
+        -- Java (nvim-java)
+
+        jdtls = function(_, opts)
+          -- Ensure jdtls is properly set up using nvim-java
+          require("lspconfig").jdtls.setup(opts)
+          return true
+        end,
+
         -- C/CPP
+
         clangd = function(_, opts)
           local clangd_ext_opts = LazyVim.opts("clangd_extensions.nvim")
           require("clangd_extensions").setup(vim.tbl_deep_extend("force", clangd_ext_opts or {}, { server = opts }))
