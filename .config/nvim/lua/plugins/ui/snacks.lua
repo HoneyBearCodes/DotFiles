@@ -6,6 +6,12 @@ return {
 
   "snacks.nvim",
   opts = {
+    terminal = {
+      win = {
+        position = "float",
+        border = "rounded",
+      },
+    },
     dashboard = {
       preset = {
         pick = function(cmd, opts)
