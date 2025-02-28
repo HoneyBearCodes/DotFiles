@@ -10,6 +10,8 @@ return {
       win = {
         position = "float",
         border = "rounded",
+        title = " Terminal ",
+        title_pos = "center",
       },
     },
     dashboard = {

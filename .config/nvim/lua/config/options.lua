@@ -13,3 +13,6 @@ end
 
 vim.opt.grepprg = "rg --vimgrep --smart-case --"
 vim.opt.listchars = "trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂"
+
+-- Use fish as the default shell globally
+vim.opt.shell = "/usr/bin/fish"
